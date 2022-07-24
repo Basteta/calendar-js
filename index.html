@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Simple web site">
+    <title>Simple reservation calendar</title>
+    <script src="js/index.js" type="module"></script>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div id="modal-time" class="popup-modal" data-popup-modal="time">
+    <div class="modal-content">
+       <div class="modal-header">
+           <div class="modal-title">Select reservation time</div>
+           <button class="modal-close" id="close">&#10005;</button>
+       </div>
+            <ul class="modal-body" id="modal-body"></ul>
+    </div>
+</div>
+<div id="reservation-form" class="popup-modal" data-popup-modal="form">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="modal-back" id="back">&#8249;</button>
+            <div class="form-title" id="form-title">Data</div>
+            <button class="modal-close" id="form-close">&#10005;</button>
+        </div>
+        <form class="form-body" id="form-body">
+            <div class="errorMessage" id="error-message"></div>
+            <div class="control-group">
+                <div class="form-field first-name">
+                    <label for="firstName">First Name:</label>
+                    <input type='text' id='firstName'/>
+                    <p class="error">Incorrect input value</p>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-field">
+                    <label for="lastName">Last Name:</label>
+                    <input type='text' id='lastName'/>
+                    <p class="error">Incorrect input value</p>
+                </div>
+            </div>
+            <button type="submit" class="form-action">Submit</button>
+        </form>
+    </div>
+</div>
+<div id="success" class="popup-modal" data-popup-modal="success">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="modal-title">Reservation succeeded</div>
+            <button class="modal-close" id="success-close">&#10005;</button>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="line">
+            <span class="line-title">Name:</span>
+            <span class="line-red firstName"></span>
+        </div>
+        <div class="line">
+            <span class="line-title">Last name:</span>
+            <span class="line-red lastName"></span>
+        </div>
+        <div class="line">
+            <span class="line-title">Reservation date:</span>
+            <span class="line-red data"></span>
+        </div>
+    </div>
+</div>
+
+<h1 class="title">Select reservation date</h1>
+
+<div id="calendar"></div>
+<div class="overlays" id="overlays"/>
+</body>
+</html>
